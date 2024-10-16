@@ -10,6 +10,21 @@ class Task:
 import json
 import os
 
+# Dummy login function
+def login():
+    print("Welcome to Task Manager! Please log in.")
+    email = input("Enter email: ")
+    password = input("Enter password: ")
+
+    # Dummy credentials
+    if email == "testuser@example.com" and password == "password123":
+        print("Login successful!")
+        return True
+    else:
+        print("Login failed! Please try again.")
+        return False
+
+
 # Load tasks from a file (tasks.json)
 def load_tasks(file_name='tasks.json'):
     if os.path.exists(file_name):
@@ -93,4 +108,13 @@ def main():
             print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
+    if login():
+        main()
+    else:
+        print("Exiting application...")
+          
+
+if __name__ == "__main__":
     main()
+
+
